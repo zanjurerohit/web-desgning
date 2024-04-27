@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>currency converter</title>
+    <style>
+        body{
+            background-color: #1f242d;
+        }
+        h1{
+            color: #fff;
+        }
+        h3{
+            color: #fff;
+        }
+        h5{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    
+   <form name="fm">
+   <h5> from : <select name="from"></h5>
+    <option value="INR"> indian rupees</option>
+    <option value="USD"> american dollars</option>
+    <option value="AUD">Australian doller</option>
+    <option value="BRL">Brazillian Real</option>
+    <option value="CAD">Canadian Dollar</option>
+    <option value="CNY">Chinese Yuan</option>
+    <option value="EUR">Euro</option>
+    <option value="XCD">East Caribbean Dollar</option>
+    <option value="CYP">Cyprus pound</option>
+    <option value="XAF">Central African CFA Franc</option>
+</select>
+    to : <select name="to">
+        <option value="INR"> indian rupees</option>
+        <option value="USD"> american dollars</option>
+        <option value="AUD">Australian doller</option>
+        <option value="BRL">Brazillian Real</option>
+        <option value="CAD">Canadian Dollar</option>
+        <option value="CNY">Chinese Yuan</option>
+        <option value="EUR">Euro</option>
+        <option value="XCD">East Caribbean Dollar</option>
+        <option value="CYP">Cyprus pound</option>
+        <option value="XAF">Central African CFA Franc</option>
+        
+        
+    </select>
+    <br><br>
+    <h3>enter amount:<input type="number" name="amount"/></h3>
+
+   </form>
+
+   <h1>convert amount:<span id="amt"></span></h1>
+   <script>
+    function converter(){
+        var from = document.fm.from.value;
+        var to = document.fm.to.value
+        var amount = parseFloat (document.fm.amount.value)
+        var url = `https://api.exchangerate-api.com/v4/latest/${from}`
+        fetch(url)
+        .then(re=>re.json())
+        .then(data=>{
+            console.log(data['rates'][to])
+            amoun = data['rates'][to]*amount
+            document.getElementById('amt').innerHTML = amoun;
+        })
+    }
+   </script>
+   <input type="submit" value="convert" onclick="converter()"/>
+</body>
+</html>

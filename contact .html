@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact me</title>
+    <style>
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .logo{
+            font-size: 2.5rem;
+            color:#fff;
+            font-weight: 600;
+            cursor: default;
+        }
+        .navbar a{
+            font-size: 1.2rem;
+            margin-right: 9rem;
+            transition: .3s;
+            text-decoration-line: none;
+        }
+        .navbar a:hover,
+    .navbar a.active{
+    color:rgb(94, 192, 230);
+    }
+        body{
+      background-color: #1f242d;
+    }
+    a{
+        color:white;
+       }
+     h2{
+        color:#0ef;
+     }  
+     .contact{
+        margin-top: 6rem;
+        align-items: center;
+        margin-left: 40%;
+
+     }
+     .div1{
+        margin-top: 2rem;
+    }
+     .div2{
+        margin-top: 1rem;
+     }
+     .div3{
+        margin-top: 1rem;
+    }
+    .btn{
+        color:#1f242d;
+        background-color: #0ef;
+    }
+        </style>
+
+</head>
+<body>
+    
+  <header class="header">
+    
+
+    <i class='bx bx-menu' id="menu-icon" ></i>
+
+    <nav class="navbar">
+        <a href="portfolio.html">home</a>
+        <a href="about me .html">about me</a>
+        <a href="project .html">project</a>
+        <a href="skill .html">skill</a>
+        <a href="contact .html">contact me</a>
+        </nav>
+</header>
+</ul>
+<section class="contact" id="contact">
+    <h2 class="heading">CONTACT<span>ME!</span></h2>
+
+    <form action="#">
+        <div class="div1">
+            <input type="text" placeholder="Full Name">
+        </div>
+        <div class="div2"></div>
+            <input type="email" placeholder="Email Address">
+        </div>
+        <div class="div3">
+            <input type="number" placeholder="Mobile Number">
+        </div>
+        <br>
+        <textarea name="id=" cols="20" rows="10" placeholder="Your Message"></textarea>
+        <br>
+
+        <input type="submit" value="Send Message" class="btn">
+    </form>
+</section>
+</body>
+</html>
